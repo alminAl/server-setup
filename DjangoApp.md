@@ -43,6 +43,9 @@ exit
 
 ## Git Clone
 ```bash
+cd ~/.ssh
+```
+```bash
 ssh-keygen -t ecdsa -b 521 -C "root@<server username>"
 ```
 ```bash
