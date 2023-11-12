@@ -92,3 +92,23 @@ ss -nlt | grep 5432
 ![imaeb](img/Screenshot_5.png)
 
 If everything is OK, you should see this output.
+
+
+
+### Nginx
+
+```bash
+server {
+    listen 80;
+    server_name 157.230.242.209;  # Replace with your actual domain or server IP
+
+    location / {
+        proxy_pass http://localhost:5432;  # Replace with your PostgreSQL server address
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
