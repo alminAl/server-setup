@@ -170,7 +170,7 @@ Create file  < Any File Name >
 ```bash
 server {
     server_name <your_ip_address>;
-
+    client_max_body_size 103M;
     location = /favicon.ico { access_log off; log_not_found off; }
        location /static/ {
         alias /home/bpm/BappaMazumderBackend/static/;
